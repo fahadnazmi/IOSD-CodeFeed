@@ -1,0 +1,376 @@
+<html>
+
+<head>
+    <title>COVID-19 Stats</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+
+        }
+
+        body {
+            background-color: #100f14f5;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .main {
+            width: 900px;
+            border: 3px solid rgb(114, 83, 114);
+            background-color: rgb(92, 78, 110);
+            margin: 33px auto;
+            color: rgb(105, 218, 154);
+        }
+
+        .main1 {
+            border: 3px solid rgb(136, 89, 89);
+            margin: 12px 3px;
+            padding: 12px 3px;
+            background: rgb(92, 99, 139);
+        }
+
+        #start {
+            float: right;
+            width: 48%;
+        }
+
+        #totalw {
+            float: left;
+            width: 48%;
+        }
+
+        #stati {
+
+            clear: both;
+            clear: left;
+            width: 100%;
+        }
+
+        p,
+        h3 {
+
+            text-align: justify;
+        }
+
+        h1 {
+            padding-bottom: 0%;
+
+            width: 455px;
+        }
+
+        .columns {
+            margin: auto;
+            padding: 6px;
+        }
+
+        #statable {
+            margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        #statable td,
+        #statable th {
+            color: rgb(226, 185, 131);
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+
+        #statable tr:hover {
+            background-color: rgb(40, 50, 56);
+        }
+
+        #statable th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #3a3e4b;
+            color: white;
+        }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+        google.charts.load('current', { 'packages': ['corechart'] });
+
+        google.charts.setOnLoadCallback(drawcasesChart);
+
+        google.charts.setOnLoadCallback(drawstatesChart);
+
+
+        function drawcasesChart() {
+
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Cases');
+            data.addColumn('number', 'People');
+            data.addRows([
+                ['Active', 136872],
+                ['Discharged', 10633025],
+                ['Deaths', 155813]
+            ]);
+
+
+            var options = {
+                title: 'Total Covid Cases In India',
+                width: 400,
+                height: 300
+            };
+
+
+            var chart = new google.visualization.PieChart(document.getElementById('cases_chart_div'));
+            chart.draw(data, options);
+        }
+
+
+        function drawstatesChart() {
+
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'States');
+            data.addColumn('number', 'Total');
+            data.addRows([
+                ['Maharashtra', 2067643],
+                ['Kerala', 1007019],
+                ['Karnataka', 945638],
+                ['Andhra Pradesh', 888899],
+                ['Tamil Nadu', 845575]
+            ]);
+
+
+            var options = {
+                title: 'Top 5 States With Most Acitve Covid Cases',
+                width: 400,
+                height: 300
+            };
+
+
+            var chart = new google.visualization.PieChart(document.getElementById('states_chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="main">
+        <h1> Stats About COVID-19 </h1>
+        <h6><em>(as of 15 February, 2021)</em></h6>
+        <div id="start" class="main1">
+            <h3>How it Started India </h3>
+            <p id="conpara" class="para">India witnessed an outbreak of the coronavirus, otherwise known as COVID-19, or
+                SARS-CoV-2 in late January 2020 when three Indian students travelled to the southern state of Kerala
+                from Wuhan in China - the epicenter of the outbreak. </p>
+        </div>
+        <div id="totalw" class="main1">
+            <h3>Situation Around the Globe</h3>
+            <p id="totalwpara" class="para">Number of cases worldwide as of February 15, 2021 are <strong>
+                    109,413,396</strong>. <br> Country with the highest cases is <strong>United States</strong>. <br>
+                Country with the highest per million testing among most impacted countries is <strong>Israel</strong>.
+            </p>
+        </div>
+        <div id="stati" class="main1">
+            <h3>Situation in India</h3>
+            <p id="statipara" class="para">Total number of confirmed cases are <strong>10,925,710</strong>. The state
+                with most cases and deaths is <strong>Maharashtra</strong>. </p>
+        </div>
+
+    </div>
+    <table id="statable">
+        <tr>
+            <th>States and Union Territories</th>
+            <th>Cases</th>
+            <th>Deaths</th>
+        </tr>
+        <tr>
+            <td>Maharashtra</td>
+            <td>2067643</td>
+            <td>51552</td>
+        </tr>
+        <tr>
+            <td>Kerala</td>
+            <td>1007019</td>
+            <td>3998</td>
+        </tr>
+        <tr>
+            <td>Karnataka</td>
+            <td>945638</td>
+            <td>12267</td>
+        </tr>
+        <tr>
+            <td>Andhra Pradesh</td>
+            <td>888899</td>
+            <td>7163</td>
+        </tr>
+        <tr>
+            <td>Tamil Nadu</td>
+            <td>845575</td>
+            <td>12425</td>
+        </tr>
+        <tr>
+            <td>Delhi</td>
+            <td>637087</td>
+            <td>10893</td>
+        </tr>
+        <tr>
+            <td>Uttar Pradesh</td>
+            <td>602248</td>
+            <td>8704</td>
+        </tr>
+        <tr>
+            <td>West Bengal</td>
+            <td>572728</td>
+            <td>10233</td>
+        </tr>
+        <tr>
+            <td>Odisha</td>
+            <td>336262</td>
+            <td>1911</td>
+        </tr>
+        <tr>
+            <td>Rajasthan</td>
+            <td>319005</td>
+            <td>2781</td>
+        </tr>
+        <tr>
+            <td>Chattisgarh</td>
+            <td>309373</td>
+            <td>3777</td>
+        </tr>
+        <tr>
+            <td>Telangana</td>
+            <td>296802</td>
+            <td>1619</td>
+        </tr>
+        <tr>
+            <td>Haryana</td>
+            <td>269802</td>
+            <td>3039</td>
+        </tr>
+        <tr>
+            <td>Gujarat</td>
+            <td>265493</td>
+            <td>4401</td>
+        </tr>
+        <tr>
+            <td>Bihar</td>
+            <td>261785</td>
+            <td>1527</td>
+        </tr>
+        <tr>
+            <td>Madhya Pradesh</td>
+            <td>257849</td>
+            <td>3838</td>
+        </tr>
+        <tr>
+            <td>Assam</td>
+            <td>217304</td>
+            <td>1089</td>
+        </tr>
+        <tr>
+            <td>Punjab</td>
+            <td>176520</td>
+            <td>5707</td>
+        </tr>
+        <tr>
+            <td>Jammu and Kashmir</td>
+            <td>125405</td>
+            <td>1951</td>
+        </tr>
+        <tr>
+            <td>Jharkhand</td>
+            <td>119354</td>
+            <td>1084</td>
+        </tr>
+        <tr>
+            <td>Uttarakhand</td>
+            <td>96867</td>
+            <td>1680</td>
+        </tr>
+        <tr>
+            <td>Himachal Pradesh</td>
+            <td>58234</td>
+            <td>994</td>
+        </tr>
+        <tr>
+            <td>Goa</td>
+            <td>54275</td>
+            <td>781</td>
+        </tr>
+        <tr>
+            <td>Punducherry</td>
+            <td>39468</td>
+            <td>658</td>
+        </tr>
+        <tr>
+            <td>Tripura</td>
+            <td>33353</td>
+            <td>391</td>
+        </tr>
+        <tr>
+            <td>Manipur</td>
+            <td>29204</td>
+            <td>373</td>
+        </tr>
+        <tr>
+            <td>Arunachal Pradesh</td>
+            <td>16833</td>
+            <td>56</td>
+        </tr>
+        <tr>
+            <td>Meghalaya</td>
+            <td>13942</td>
+            <td>148</td>
+        </tr>
+        <tr>
+            <td>Nagaland</td>
+            <td>12189</td>
+            <td>88</td>
+        </tr>
+        <tr>
+            <td>Ladakh</td>
+            <td>9773</td>
+            <td>130</td>
+        </tr>
+        <tr>
+            <td>Sikkim</td>
+            <td>6118</td>
+            <td>135</td>
+        </tr>
+        <tr>
+            <td>Andaman and Nicobar Islands</td>
+            <td>5009</td>
+            <td>62</td>
+        </tr>
+        <tr>
+            <td>Mizoram</td>
+            <td>4395</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>Dadra and Nagar Haveli and Daman and Diu</td>
+            <td>3400</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Lakshadweep</td>
+            <td>234</td>
+            <td>0</td>
+        </tr>
+    </table>
+
+    <table class="columns">
+        <tr>
+            <td>
+                <div id="cases_chart_div" style="border: 1px solid #ccc"></div>
+            </td>
+            <td>
+                <div id="states_chart_div" style="border: 1px solid #ccc"></div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
